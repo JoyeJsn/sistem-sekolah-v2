@@ -41,9 +41,9 @@ class MajorController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit()
+    public function edit(string $id)
     {
-        return"Displaying the edit major page";
+        return"Displaying the edit major with ID: {id}";
     }
 
     /**

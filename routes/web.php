@@ -22,13 +22,13 @@ Route::name('teachers.')->prefix('teachers')->group(function() {
     Route::get('/',[TeacherController::class, 'index'])->name('index');
 
     //Halaman detail siswa
-    Route::get('/show {id}' , [TeacherController::class, 'show'])->name('show');
+    Route::get('/{id}' , [TeacherController::class, 'show'])->name('show');
 
     //Halaman tambah siswa
     Route::get('/create' , [TeacherController::class, 'create'])->name('create');
 
     //Halaman edit siswa
-    Route::get('/edit' , [TeacherController::class, 'edit'])->name('edit');
+    Route::get('/{id}/edit' , [TeacherController::class, 'edit'])->name('edit');
 
     //Logika tambah siswa
     Route::post('/', [TeacherController::class, 'store'])->name('store');
@@ -46,13 +46,13 @@ Route::name('students.')->prefix('students')->group(function() {
     Route::get('/',[StudentController::class, 'index'])->name('index');
 
     //Halaman detail siswa
-    Route::get('/show {id}' , [StudentController::class, 'show'])->name('show');
+    Route::get('/{id}' , [StudentController::class, 'show'])->name('show');
 
     //Halaman tambah siswa
     Route::get('/create' , [StudentController::class, 'create'])->name('create');
 
     //Halaman edit siswa
-    Route::get('/edit' , [StudentController::class, 'edit'])->name('edit');
+    Route::get('/{id}/edit' , [StudentController::class, 'edit'])->name('edit');
 
     //Logika tambah siswa
     Route::post('/', [StudentController::class, 'store'])->name('store');
@@ -71,13 +71,13 @@ Route::name('classes.')->prefix('classes')->group(function() {
     Route::get('/', IndexController::class)->name('index');
 
     //Halaman detail siswa
-    Route::get('/show {id}' , ShowController::class)->name('show');
+    Route::get('/{id}' , ShowController::class)->name('show');
 
     //Halaman tambah siswa
     Route::get('/create' , CreateController::class)->name('create');
 
     //Halaman edit siswa
-    Route::get('/edit' , EditController::class)->name('edit');
+    Route::get('/{id}/edit' , EditController::class)->name('edit');
 
     //Logika tambah siswa
     Route::post('/', StoreController::class)->name('store');
