@@ -1,109 +1,53 @@
-<!DOCTYPE html>
-<html lang="id">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $title }}</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
+@section('title', $title)
 
-<body class="flex min-h-screen flex-col bg-[#F7F6F2] text-slate-700">
+@section('content')
+    <a href="#" class="text-xs uppercase tracking-[0.15em] text-slate-400 hover:text-[#A16207]">&larr; Buku
+        Induk</a>
 
-    {{-- Header Start--}}
-    <header class="bg-[#16213A] text-white">
-        <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
-            <a href="" class="flex items-center gap-3">
-                <span>
-                    <span class="font-display block text-lg font-semibold leading-none">Sistem Sekolah</span>
-                    <span class="text-[11px] uppercase tracking-[0.2em] text-white/50">Buku Induk Siswa</span>
-                </span>
-            </a>
-            <nav class="hidden gap-8 text-sm md:flex">
-                <a href="#" class="text-white/55 hover:text-white">Siswa</a>
-                <a href="#" class="text-white/55 hover:text-white">Guru</a>
-                <a href="#" class="text-white/55 hover:text-white">Kelas</a>
-                <a href="#" class="text-white/55 hover:text-white">Jurusan</a>
-            </nav>
-        </div>
-        <div class="h-0.5 bg-[#A16207]"></div>
-    </header>
-    {{-- Header End --}}
-
-    {{-- Content Start --}}
-    <main class="mx-auto w-full max-w-2xl flex-1 px-6 py-10">
-        <div class="mb-8 border-b border-[#E5E3DB] pb-5">
-            <a href="" class="text-xs uppercase tracking-[0.15em] text-slate-400 hover:text-[#A16207]">&larr; Buku
-                Induk</a>
-            <h1 class="font-display mt-2 text-3xl font-semibold text-[#16213A]">Catat Siswa Baru</h1>
-            <p class="mt-1 text-sm text-slate-500">Isi data untuk mendaftarkan siswa ke buku induk.</p>
+    <div class="mt-3 border border-[#E5E3DB] bg-white">
+        <div class="flex items-start justify-between border-b border-[#E5E3DB] bg-[#FCFBF8] px-8 py-6">
+            <div>
+                <p class="mb-1 text-[11px] uppercase tracking-[0.2em] text-[#A16207]">Lembar Siswa</p>
+                <h1 class="font-display text-3xl font-semibold text-[#16213A]">Budi Ariyanto</h1>
+                <p class="mt-1 font-mono text-xs text-slate-500">NIS 2024001</p>
+            </div>
+            <a href="#"
+                class="bg-[#16213A] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#26324f]">Ubah</a>
         </div>
 
-        <form action="" method="POST" class="space-y-6 border border-[#E5E3DB] bg-white p-8">
-
-            <div>
-                <label for="nis"
-                    class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">NIS</label>
-                <input type="text" id="nis" name="nis" placeholder="Contoh: 2024010"
-                    class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm placeholder:text-slate-400 focus:border-[#A16207] focus:bg-white focus:outline-none">
+        <dl class="divide-y divide-[#EFEDE6] text-sm">
+            <div class="flex justify-between px-8 py-4">
+                <dt class="uppercase tracking-[0.1em] text-xs text-slate-400">NIS</dt>
+                <dd class="font-medium text-[#16213A]">2024001</dd>
             </div>
-
-            <div>
-                <label for="name"
-                    class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Nama
-                    Lengkap</label>
-                <input type="text" id="name" name="name" placeholder="Nama lengkap siswa"
-                    class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm placeholder:text-slate-400 focus:border-[#A16207] focus:bg-white focus:outline-none">
+            <div class="flex justify-between px-8 py-4">
+                <dt class="uppercase tracking-[0.1em] text-xs text-slate-400">Nama Lengkap</dt>
+                <dd class="font-medium text-[#16213A]">Budi Ariyanto</dd>
             </div>
-
-            <div>
-                <label for="gender"
-                    class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Jenis
-                    Kelamin</label>
-                <select id="gender" name="gender"
-                    class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
-                    <option value="L">Laki-laki</option>
-                    <option value="P">Perempuan</option>
-                </select>
+            <div class="flex justify-between px-8 py-4">
+                <dt class="uppercase tracking-[0.1em] text-xs text-slate-400">Jenis Kelamin</dt>
+                <dd class="font-medium text-[#16213A]">Laki-laki</dd>
             </div>
-
-            <div>
-                <label for="major"
-                    class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Jurusan</label>
-                <select id="major" name="major"
-                    class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
-                    <option value="">Pilih jurusan</option>
-                    <option value="">AKL</option>
-                    <option value="">TKJ</option>
-                    <option value="">BiD</option>
-                </select>
+            <div class="flex justify-between px-8 py-4">
+                <dt class="uppercase tracking-[0.1em] text-xs text-slate-400">Jurusan</dt>
+                <dd class="font-medium text-[#16213A]">RPL</dd>
             </div>
-
-            <div>
-                <label for="class"
-                    class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Kelas</label>
-                <input type="text" id="class" name="class" placeholder="Contoh: X AKL 1"
-                    class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm placeholder:text-slate-400 focus:border-[#A16207] focus:bg-white focus:outline-none">
+            <div class="flex justify-between px-8 py-4">
+                <dt class="uppercase tracking-[0.1em] text-xs text-slate-400">Kelas</dt>
+                <dd class="font-medium text-[#16213A]">XII AKL 1</dd>
             </div>
+        </dl>
 
-            <div class="flex justify-end gap-4 border-t border-[#EFEDE6] pt-6">
-                <a href="#" class="px-4 py-2.5 text-sm font-medium text-slate-500 hover:text-[#16213A]">Batal</a>
+        <div class="flex justify-end gap-4 border-t border-[#E5E3DB] px-8 py-5">
+            <a href="" class="px-4 py-2.5 text-sm font-medium text-slate-500 hover:text-[#16213A]">Kembali</a>
+            <form action="" method="POST" onsubmit="return confirm('Hapus data siswa ini dari buku induk?')">
+                @csrf
+                @method('DELETE')
                 <button type="submit"
-                    class="bg-[#16213A] px-6 py-2.5 text-sm font-medium text-white transition hover:bg-[#26324f]">Simpan
-                    ke Buku Induk</button>
-            </div>
-        </form>
-    </main>
-    {{-- Content End --}}
-
-    {{-- Footer Start --}}
-    <footer class="border-t border-[#E5E3DB]">
-        <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-6 text-xs text-slate-400">
-            <span>&copy; 2026 Sistem Sekolah</span>
-            <span class="uppercase tracking-[0.15em]">Media Pembelajaran SMK</span>
+                    class="border border-red-200 px-5 py-2.5 text-sm font-medium text-red-700 transition hover:bg-red-50">Hapus</button>
+            </form>
         </div>
-    </footer>
-    {{-- Footer End --}}
-</body>
-
-</html>
+    </div>
+@endsection

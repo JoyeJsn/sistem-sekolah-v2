@@ -34,10 +34,10 @@ Route::name('teachers.')->prefix('teachers')->group(function() {
     Route::post('/', [TeacherController::class, 'store'])->name('store');
 
     //Logika edit siswa
-    Route::put('/', [TeacherController::class, 'update'])->name('update');
+    Route::put('/{id}', [TeacherController::class, 'update'])->name('update');
 
     //Logika hapus siswa
-    Route::delete('/', [TeacherController::class, 'destroy'])->name('destroy');
+    Route::delete('/{id}', [TeacherController::class, 'destroy'])->name('destroy');
 });
 
 //Student data management (Action Controller)
