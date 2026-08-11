@@ -7,11 +7,12 @@ use Illuminate\Http\Request;
 
 class ShowController extends Controller
 {
-    /**
-     * Handle the incoming request.
-     */
-    public function __invoke(Request $request, string $id)
+    public function __invoke(Request $request)
     {
-        return"Displaying school class with ID: {$id}";
+        $title = "Catat Kelas Baru - Sistem Sekolah";
+
+        return view('classes.show', [
+            'title' => $title
+        ]);
     }
 }

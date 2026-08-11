@@ -13,8 +13,9 @@
                 <h1 class="font-display text-3xl font-semibold text-[#16213A]">Budi Ariyanto</h1>
                 <p class="mt-1 font-mono text-xs text-slate-500">NIS 2024001</p>
             </div>
-            <a href="#"
-                class="bg-[#16213A] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#26324f]">Ubah</a>
+            <a href="{{ route('students.edit', ['id' => 1]) }}"
+                class="bg-[#16213A] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#26324f]">Ubah
+            </a>
         </div>
 
         <dl class="divide-y divide-[#EFEDE6] text-sm">

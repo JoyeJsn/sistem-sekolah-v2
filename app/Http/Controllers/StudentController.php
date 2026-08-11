@@ -60,7 +60,7 @@ class StudentController extends Controller
 
     public function edit()
     {
-        $title = "Ubah Data Siswa - Sistem Sekolah<";
+        $title = "Ubah Data Siswa - Sistem Sekolah";
 
         return view('students.edit', [
             "title" => $title
