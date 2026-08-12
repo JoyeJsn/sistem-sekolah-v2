@@ -38,7 +38,7 @@ class TeacherController extends Controller
 
     public function show()
     {
-        $title = "Catat Guru Baru - Sistem Sekolah";
+        $title = "Sistem Sekolah - Lembar Guru";
 
         return view('teachers.show', [
             'title' => $title
@@ -47,7 +47,7 @@ class TeacherController extends Controller
 
     public function create()
     {
-        $title = "Catat Guru Baru - Sistem Sekolah";
+        $title = "Sistem Sekolah - Tambah Guru";
 
         return view('teachers.create', [
             'title' => $title
@@ -56,7 +56,7 @@ class TeacherController extends Controller
 
     public function edit()
     {
-        $title = "Ubah Data Guru - Sistem Sekolah";
+        $title = "Sistem Sekolah - Edit Guru";
 
         return view('teachers.edit', [
             "title" => $title

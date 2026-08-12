@@ -42,7 +42,7 @@ class StudentController extends Controller
 
     public function show()
     {
-        $title = "Catat Siswa Baru - Sistem Sekolah";
+        $title = "Sistem Sekolah - Lembar Siswa";
 
         return view('students.show', [
             'title' => $title
@@ -51,7 +51,7 @@ class StudentController extends Controller
 
     public function create()
     {
-        $title = "Catat Siswa Baru - Sistem Sekolah";
+        $title = "Sistem Sekolah - Tambah Siswa";
 
         return view('students.create', [
             'title' => $title
@@ -60,7 +60,7 @@ class StudentController extends Controller
 
     public function edit()
     {
-        $title = "Ubah Data Siswa - Sistem Sekolah";
+        $title = "Sistem Sekolah - Edit Siswa";
 
         return view('students.edit', [
             "title" => $title

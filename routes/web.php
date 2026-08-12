@@ -22,10 +22,10 @@ Route::name('teachers.')->prefix('teachers')->group(function() {
     Route::get('/',[TeacherController::class, 'index'])->name('index');
 
     //Halaman detail siswa
-    Route::get('/{id}' , [TeacherController::class, 'show'])->name('show');
+    Route::get('/{id}' , [TeacherController::class, 'show'])->name('show')->whereNumber('id');
 
     //Halaman tambah siswa
-    Route::get('/create' , [TeacherController::class, 'create'])->name('create')->whereNumber('id');
+    Route::get('/create' , [TeacherController::class, 'create'])->name('create');
 
     //Halaman edit siswa
     Route::get('/{id}/edit' , [TeacherController::class, 'edit'])->name('edit');
@@ -34,10 +34,10 @@ Route::name('teachers.')->prefix('teachers')->group(function() {
     Route::post('/', [TeacherController::class, 'store'])->name('store');
 
     //Logika edit siswa
-    Route::put('/{id}', [TeacherController::class, 'update'])->name('update');
+    Route::put('/{id}/update', [TeacherController::class, 'update'])->name('update');
 
     //Logika hapus siswa
-    Route::delete('/{id}', [TeacherController::class, 'destroy'])->name('destroy');
+    Route::delete('/{id}/destroy', [TeacherController::class, 'destroy'])->name('destroy');
 });
 
 //Student data management (Action Controller)
@@ -58,10 +58,10 @@ Route::name('students.')->prefix('students')->group(function() {
     Route::post('/', [StudentController::class, 'store'])->name('store');
 
     //Logika edit siswa
-    Route::put('/', [StudentController::class, 'update'])->name('update');
+    Route::put('/{id}/update', [StudentController::class, 'update'])->name('update');
 
     //logika hapus siswa
-    Route::delete('/', [StudentController::class, 'destroy'])->name('destroy');
+    Route::delete('/{id}/destroy', [StudentController::class, 'destroy'])->name('destroy');
 });
 
 
@@ -71,10 +71,10 @@ Route::name('classes.')->prefix('classes')->group(function() {
     Route::get('/', IndexController::class)->name('index');
 
     //Halaman detail siswa
-    Route::get('/{id}' , ShowController::class)->name('show');
+    Route::get('/{id}' , ShowController::class)->name('show')->whereNumber('id');
 
     //Halaman tambah siswa
-    Route::get('/create' , CreateController::class)->name('create')->whereNumber('id');
+    Route::get('/create' , CreateController::class)->name('create');
 
     //Halaman edit siswa
     Route::get('/{id}/edit' , EditController::class)->name('edit');
@@ -83,10 +83,10 @@ Route::name('classes.')->prefix('classes')->group(function() {
     Route::post('/', StoreController::class)->name('store');
 
     //Logika edit siswa
-    Route::put('/', UpdateController::class)->name('update');
+    Route::put('/{id}/update', UpdateController::class)->name('update');
 
     //logika hapus siswa
-    Route::delete('/', DestroyController::class)->name('destroy');
+    Route::delete('/{id}/destroy', DestroyController::class)->name('destroy');
 });
 
 //Major data Manajemen (Resource)

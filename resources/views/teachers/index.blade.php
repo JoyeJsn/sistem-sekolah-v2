@@ -11,7 +11,7 @@
         </div>
         <a href="{{ route('teachers.create') }}"
         class="bg-[#16213A] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#26324f]">
-            Catat Siswa Baru
+            Catat Guru Baru
         </a>
     </div>
 
@@ -22,9 +22,9 @@
                     <th class="w-14 px-5 py-3.5 font-semibold">Id</th>
                     <th class="px-5 py-3.5 font-semibold">NIP</th>
                     <th class="px-5 py-3.5 font-semibold">Nama Guru</th>
-                    <th class="px-5 py-3.5 font-semibold">Gender</th>
-                    <th class="px-5 py-3.5 font-semibold">Subject</th>
-                    <th class="px-5 py-3.5 font-semibold">Phone</th>
+                    <th class="px-5 py-3.5 font-semibold">Jenis Kelamin</th>
+                    <th class="px-5 py-3.5 font-semibold">Mapel</th>
+                    <th class="px-5 py-3.5 font-semibold">Nomor Telepon</th>
                     <th class="px-5 py-3.5 font-semibold">Status</th>
                     <th class="px-5 py-3.5 text-right font-semibold">Tindakan</th>
                 </tr>
