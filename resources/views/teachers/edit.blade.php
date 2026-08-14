@@ -6,7 +6,7 @@
     <div class="mb-8 border-b border-[#E5E3DB] pb-5">
         <a href="#" class="text-xs uppercase tracking-[0.15em] text-slate-400 hover:text-[#A16207]">&larr; Buku
             Induk</a>
-        <h1 class="font-display mt-2 text-3xl font-semibold text-[#16213A]">Ubah Data Siswa</h1>
+        <h1 class="font-display mt-2 text-3xl font-semibold text-[#16213A]">Ubah Data Guru</h1>
         <p class="mt-1 text-sm text-slate-500">Memperbarui catatan atas nama <span class="font-medium text-[#16213A]">Budi
                 Ariyanto</span>.</p>
     </div>
@@ -44,9 +44,9 @@
         </div>
 
         <div>
-            <label for="phone"
+            <label for="phone_number"
                 class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Nomor Telepon</label>
-            <input type="text" id="phone" name="phone" value="081234560001"
+            <input type="text" id="phone_number" name="phone_number" value="081234560001"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
         </div>
 

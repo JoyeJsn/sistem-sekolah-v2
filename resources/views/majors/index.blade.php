@@ -11,7 +11,7 @@
         </div>
         <a href="{{ route('majors.create') }}"
         class="bg-[#16213A] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#26324f]">
-            Catat Siswa Baru
+            Catat Jurusan Baru
         </a>
     </div>
 
@@ -20,9 +20,9 @@
             <thead>
                     <tr class="border-b border-[#16213A] text-[11px] uppercase tracking-[0.15em] text-[#16213A]">
                     <th class="w-14 px-5 py-3.5 font-semibold">Id</th>
-                    <th class="px-5 py-3.5 font-semibold">Code</th>
-                    <th class="px-5 py-3.5 font-semibold">Name</th>
-                    <th class="px-5 py-3.5 font-semibold">Description</th>
+                    <th class="px-5 py-3.5 font-semibold">Kode Jurusan</th>
+                    <th class="px-5 py-3.5 font-semibold">Nama Jurusan</th>
+                    <th class="px-5 py-3.5 font-semibold">Deskripsi</th>
                     <th class="px-5 py-3.5 text-right font-semibold">Tindakan</th>
                 </tr>
             </thead>

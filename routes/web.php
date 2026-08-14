@@ -91,3 +91,4 @@ Route::name('classes.')->prefix('classes')->group(function() {
 
 //Major data Manajemen (Resource)
 Route::resource('majors', MajorController::class);
+

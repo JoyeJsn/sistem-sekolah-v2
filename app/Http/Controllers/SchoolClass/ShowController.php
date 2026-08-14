@@ -9,7 +9,7 @@ class ShowController extends Controller
 {
     public function __invoke(Request $request)
     {
-        $title = "Catat Kelas Baru - Sistem Sekolah";
+        $title = "Sistem Sekolah - Lembar Kelas";
 
         return view('classes.show', [
             'title' => $title

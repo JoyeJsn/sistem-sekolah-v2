@@ -10,7 +10,7 @@ class IndexController extends Controller
 
     public function __invoke(Request $request)
     {
-        $title = "Sistem Sekolah - Daftar Guru";
+        $title = "Sistem Sekolah - Daftar Kelas";
         $classes = [
             [
                 'id' => 1,
