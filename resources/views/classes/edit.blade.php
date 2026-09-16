@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="mb-8 border-b border-[#E5E3DB] pb-5">
-        <a href="#" class="text-xs uppercase tracking-[0.15em] text-slate-400 hover:text-[#A16207]">&larr; Buku
+        <a href="/classes" class="text-xs uppercase tracking-[0.15em] text-slate-400 hover:text-[#A16207]">&larr; Buku
             Induk</a>
         <h1 class="font-display mt-2 text-3xl font-semibold text-[#16213A]">Ubah Data kelas</h1>
         <p class="mt-1 text-sm text-slate-500">Memperbarui catatan kelas <span class="font-medium text-[#16213A]">XII AKL
@@ -13,9 +13,9 @@
 
     <form action="" method="POST" class="space-y-6 border border-[#E5E3DB] bg-white p-8">
         <div>
-            <label for="class name"
+            <label for="name"
                 class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Nama Kelas</label>
-            <input type="text" id="class name" name="class name" value="XII AKL 1"
+            <input type="text" id="name" name="name" value="XII AKL 1"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
         </div>
 
@@ -24,9 +24,9 @@
                 class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Tingkat</label>
             <select id="grade" name="grade"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
-                <option value="" selected>XII</option>
-                <option value="">X</option>
-                <option value="">XI</option>
+                <option value="XII" selected>XII</option>
+                <option value="X">X</option>
+                <option value="XI">XI</option>
             </select>
         </div>
 
