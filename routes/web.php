@@ -45,23 +45,23 @@ Route::name('students.')->prefix('students')->group(function() {
     //Halaman daftar siswa
     Route::get('/',[StudentController::class, 'index'])->name('index');
 
-    //Halaman detail siswa
-    Route::get('/{id}' , [StudentController::class, 'show'])->name('show')->whereNumber('id');
-
     //Halaman tambah siswa
     Route::get('/create' , [StudentController::class, 'create'])->name('create');
-
-    //Halaman edit siswa
-    Route::get('/{id}/edit' , [StudentController::class, 'edit'])->name('edit');
 
     //Logika tambah siswa
     Route::post('/', [StudentController::class, 'store'])->name('store');
 
+    //Halaman detail siswa
+    Route::get('/{student}' , [StudentController::class, 'show'])->name('show')->whereNumber('student');
+
+    //Halaman edit siswa
+    Route::get('/{student}/edit' , [StudentController::class, 'edit'])->name('edit');
+
     //Logika edit siswa
-    Route::put('/{id}/update', [StudentController::class, 'update'])->name('update');
+    Route::put('/{student}', [StudentController::class, 'update'])->name('update');
 
     //logika hapus siswa
-    Route::delete('/{id}/destroy', [StudentController::class, 'destroy'])->name('destroy');
+    Route::delete('/{student}', [StudentController::class, 'destroy'])->name('destroy');
 });
 
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -9,30 +10,8 @@ class StudentController extends Controller
     public function index()
     {
         $title = "Sistem Sekolah - Daftar Siswa";
-        $students = [
-            [
-                'id' => 1,
-                'nis' => '22100001',
-                'name' => 'Agus',
-                'class' => 'XII TKJ 3',
-                'major' => 'TKJ'
-            ],
-            [
-                'id' => 2,
-                'nis' => '22100002',
-                'name' => 'Wudi',
-                'class' => 'XII TKJ 1',
-                'major' => 'PM'
-            ],
-            [
-                'id' => 3,
-                'nis' => '22100003',
-                'name' => 'Jonhy',
-                'class' => 'XII TKJ 2',
-                'major' => 'AKL'
-            ],
-        ];
-
+        $students = Student::select(['id', 'nis', 'name', 'class', 'major'])
+            ->get();
 
         return view('students.index', [
             'title' => $title,
@@ -40,12 +19,14 @@ class StudentController extends Controller
         ]);
     }
 
-    public function show()
+    public function show(Student $student)
     {
         $title = "Sistem Sekolah - Lembar Siswa";
 
+
         return view('students.show', [
-            'title' => $title
+            'title' => $title,
+            'student' => $student
         ]);
     }
 
@@ -58,27 +39,50 @@ class StudentController extends Controller
         ]);
     }
 
-    public function edit()
+    public function edit(Student $student)
     {
         $title = "Sistem Sekolah - Edit Siswa";
 
         return view('students.edit', [
-            "title" => $title
+            "title" => $title,
+            'student' => $student
         ]); 
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        return "Adding student data";
+        $validatedRequest = $request->validate([
+            'nis' => ['required', 'string', 'size:4', 'unique:students,nis'],
+            'name' => ['required', 'string'],
+            'gender' => ['required', 'string', 'in:Laki-laki,Perempuan'],
+            'major' => ['required', 'string', 'in:AKL,TKJ,BiD'],
+            'class' => ['required', 'string']
+        ]);
+
+        Student::create($validatedRequest);
+
+        return redirect()->route('students.index');
     }
 
-    public function update()
+    public function update(Student $student, Request $request)
     {
-        return "Updating student data";
+        $validatedRequest = $request->validate([
+            'nis' => ['required', 'string', 'size:4', 'unique:students,nis,' . $student->id],
+            'name' => ['required', 'string'],
+            'gender' => ['required', 'string', 'in:Laki-laki,Perempuan'],
+            'major' => ['required', 'string', 'in:AKL,TKJ,BiD'],
+            'class' => ['required', 'string']
+        ]);
+
+        $student->update($validatedRequest);
+
+        return redirect()->route('students.index');
     }
 
-    public function destroy()
+    public function destroy(Student $student)
     {
-        return "Deleting student data";
+        $student->delete();
+
+        return redirect()->route('students.index'); 
     }
 }
